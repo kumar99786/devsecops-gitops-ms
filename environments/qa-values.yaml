@@ -1,0 +1,21 @@
+image:
+  repository: 957117875403.dkr.ecr.us-east-1.amazonaws.com/devsecops-app
+  tag: "1"
+  pullPolicy: Always
+
+replicaCount: 2
+
+service:
+  port: 80
+
+env:
+  ENVIRONMENT: qa
+
+resources:
+  requests:
+    cpu: "150m"
+    memory: "128Mi"
+  limits:
+    cpu: "300m"
+    memory: "256Mi"
+
