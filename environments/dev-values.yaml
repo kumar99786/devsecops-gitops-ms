@@ -9,7 +9,11 @@ service:
   port: 5000
 
 env:
-  ENVIRONMENT: dev
+  ENVIRONMENT: "dev"
+  DB_HOST: "localhost"
+  DB_USER: "root"
+  DB_PASSWORD: "root"
+  DB_NAME: "testdb"
 
 resources:
   requests:
