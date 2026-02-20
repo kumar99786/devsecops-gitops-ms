@@ -24,4 +24,6 @@ resources:
     memory: "256Mi"
 imagePullSecrets:
   - name: ecr-secret
+livenessProbe: null
+readinessProbe: null
 
