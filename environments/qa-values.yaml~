@@ -1,27 +1,26 @@
 image:
   repository: 957117875403.dkr.ecr.us-east-1.amazonaws.com/devsecops-app
-  tag: "67"
+  tag: "1"
   pullPolicy: Always
 
-replicaCount: 3
+replicaCount: 2
 
 service:
   port: 80
 
 env:
-  ENVIRONMENT: prod
+  ENVIRONMENT: qa
 
 resources:
   requests:
-    cpu: "250m"
-    memory: "256Mi"
+    cpu: "150m"
+    memory: "128Mi"
   limits:
-    cpu: "500m"
-    memory: "512Mi"
+    cpu: "300m"
+    memory: "256Mi"
 image:
   repository: 957117875403.dkr.ecr.us-east-1.amazonaws.com/devsecops-app
   tag: "66"   # or latest build number
-      
+
 imagePullSecrets:
   - name: ecr-secret
-
