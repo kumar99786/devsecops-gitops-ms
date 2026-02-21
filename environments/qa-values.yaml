@@ -6,7 +6,21 @@ image:
 replicaCount: 2
 
 service:
-  port: 80
+  port: 5000
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: 5000
+  initialDelaySeconds: 10
+  periodSeconds: 10
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: 5000
+  initialDelaySeconds: 5
+  periodSeconds: 5
 
 env:
   ENVIRONMENT: qa
