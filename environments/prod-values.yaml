@@ -3,13 +3,30 @@ image:
   tag: "67"
   pullPolicy: Always
 
+imagePullSecrets:
+  - name: ecr-secret
+
 replicaCount: 3
 
 service:
-  port: 80
+  port: 5000
 
 env:
   ENVIRONMENT: prod
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: 5000
+  initialDelaySeconds: 10
+  periodSeconds: 10
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: 5000
+  initialDelaySeconds: 5
+  periodSeconds: 5
 
 resources:
   requests:
@@ -18,8 +35,3 @@ resources:
   limits:
     cpu: "500m"
     memory: "512Mi"
-image:
-  repository: 957117875403.dkr.ecr.us-east-1.amazonaws.com/devsecops-app
-  tag: "66"   # or latest build number
-    
-
