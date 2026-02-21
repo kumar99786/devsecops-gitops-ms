@@ -21,6 +21,3 @@ resources:
 image:
   repository: 957117875403.dkr.ecr.us-east-1.amazonaws.com/devsecops-app
   tag: "66"   # or latest build number
-
-imagePullSecrets:
-  - name: ecr-secret
