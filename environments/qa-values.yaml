@@ -3,6 +3,9 @@ image:
   tag: "67"
   pullPolicy: Always
 
+imagePullSecrets:
+  - name: ecr-secret
+
 replicaCount: 2
 
 service:
@@ -32,6 +35,3 @@ resources:
   limits:
     cpu: "300m"
     memory: "256Mi"
-image:
-  repository: 957117875403.dkr.ecr.us-east-1.amazonaws.com/devsecops-app
-  tag: "66"   # or latest build number
